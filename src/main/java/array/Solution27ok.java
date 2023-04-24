@@ -37,12 +37,29 @@ package array;
  * 0 <= nums[i] <= 50
  * 0 <= val <= 100
  */
-public class Solution27 {
+public class Solution27ok {
     public static void main(String[] args) {
-
+        int[] nums = {3,2,2,3};
+        removeElement(nums,3);
     }
 
-    public int removeElement(int[] nums, int val) {
-        return 0;
+    /**
+     * 一次遍历
+     * @param nums
+     * @param val
+     * @return
+     */
+    public static int removeElement(int[] nums, int val) {
+        int len = nums.length;
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if(nums[i] !=val){
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+                j++;
+            }
+        }
+        return j;
     }
 }
