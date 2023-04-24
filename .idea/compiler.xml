@@ -9,5 +9,8 @@
         <module name="mqw-leetcode" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mqw-leetcode" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
