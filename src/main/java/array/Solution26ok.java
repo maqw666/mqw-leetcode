@@ -46,4 +46,26 @@ public class Solution26ok {
        return p+1;
     }
 
+    public int remove(int[] nums){
+        //nums = [0,0,1,1,1,2,2,3,3,4]
+        if(nums ==null || nums.length ==0){
+            return 0;
+        }
+
+        int len = nums.length;
+
+        int j = 0,i=1;
+        while(j<i && i<len){
+            if(nums[i] !=nums[j]){
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+            }else{
+                i++;
+                j++;
+            }
+        }
+        return j;
+    }
+
 }
