@@ -1,4 +1,4 @@
-package sort;
+package array;
 
 import java.util.Arrays;
 
@@ -40,7 +40,7 @@ public class Solution88ok {
     public static void main(String[] args) {
         int[] nums1={1,2,3};
         int[] nums2={2,3,4};
-        int[] merge = merge(nums1, 3, nums2, 3);
+        int[] merge = merge1(nums1, 3, nums2, 3);
         System.out.println(merge);
     }
     //自己答案
@@ -89,6 +89,7 @@ public class Solution88ok {
         }
         return nums1;
     }
+
     //官方答案2
     public  void merge2(int[] nums1, int m, int[] nums2, int n) {
         for(int i=0;i < n;++i){
