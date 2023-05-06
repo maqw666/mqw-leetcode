@@ -20,7 +20,7 @@ import java.util.*;
  2 <= n <= 3 * 104
  0 <= height[i] <= 3 * 104
  */
-public class Solution11 {
+public class Solution11ok {
     public static void main(String[] args) {
         int[] arrs = {1,8,6,2,5,4,8,3,7};
         int result = maxAreaOffice(arrs);
@@ -47,6 +47,48 @@ public class Solution11 {
         int max = (int) Collections.max(lists);
         return max;
     }
+
+
+    public static int maxArea1(int[] height) {
+        int left = 0,right = height.length - 1;
+        int ans = 0;
+        while(left < right){
+            int area = Math.min(height[left],height[right])*(right - left);
+            ans = Math.max(ans, area);
+
+            if(height[left] <height[right]){
+                left++;
+            }else{
+                right--;
+            }
+        }
+        return ans;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //官方
     public static int maxAreaOffice(int[] height) {
         int l = 0,r = height.length-1;

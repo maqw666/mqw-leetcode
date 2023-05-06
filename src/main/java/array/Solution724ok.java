@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * 724. 寻找数组的中心下标--简单
  * 给你一个整数数组 nums，请编写一个能够返回数组 “中心下标” 的方法。
  * 数组 中心下标 是数组的一个下标，其左侧所有元素相加的和等于右侧所有元素相加的和。
  * 如果数组不存在中心下标，返回 -1 。如果数组有多个中心下标，应该返回最靠近左边的那一个。
@@ -14,11 +15,11 @@ import java.util.List;
  *
  * 空间复杂度：O(1)O(1)。
  */
-public class Solution724 {
+public class Solution724ok {
     public static void main(String[] args) {
-        int[] nums = {1,7,3,6,5,6};
+        int[] nums = {1,2,3};
         long time1 = System.currentTimeMillis();
-        int result = pivotIndexOfficial(nums);
+        int result = pivotIndex(nums);
         System.out.println(result);
         long time2 = System.currentTimeMillis();
         System.out.println("运行毫秒数："+(time2-time1));
@@ -32,7 +33,7 @@ public class Solution724 {
                 list.add(i);
             }
         }
-        return list.get(0);
+        return list.size() ==0?-1:list.get(0);
     }
 
     private static int LeftSum(int[] nums,int i){
