@@ -3,6 +3,7 @@ package array;
 import java.util.*;
 
 /**
+ * 11.
  * 给你 n 个非负整数 a1，a2，...，an，每个数代表坐标中的一个点 (i, ai) 。
  * 在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0) 。
  * 找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。
@@ -25,27 +26,6 @@ public class Solution11ok {
         int[] arrs = {1,8,6,2,5,4,8,3,7};
         int result = maxAreaOffice(arrs);
         System.out.println(result);
-    }
-    public static int maxArea(int[] height) {
-        Map<Integer,Integer> maps = new HashMap<Integer,Integer>();
-        List<Integer> lists = new ArrayList<Integer>();
-        String[] strs = new String[height.length];
-        for (int i = 0; i < height.length; i++) {
-            strs[i]=i+"-"+height[i];
-        }
-        for (int i = 0; i < strs.length - 1; i++) {
-            for (int j = i + 1; j < strs.length; j++) {
-                int i0 = Integer.parseInt(strs[i].split("-")[0]);
-                int i1 = Integer.parseInt(strs[i].split("-")[1]);
-                int j0 = Integer.parseInt(strs[j].split("-")[0]);
-                int j1 = Integer.parseInt(strs[j].split("-")[1]);
-                int len = j0 - i0;
-                int high = Math.min(i1,j1);
-                lists.add(len*high);
-            }
-        }
-        int max = (int) Collections.max(lists);
-        return max;
     }
 
 
