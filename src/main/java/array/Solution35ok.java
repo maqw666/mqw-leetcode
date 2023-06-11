@@ -25,7 +25,7 @@ import java.util.List;
 public class Solution35ok {
     public static void main(String[] args) {
         int[] nums = {1,3,5,6};
-        searchInsert(nums,7);
+        searchInsert(nums,4);
     }
 
     public static int searchInsert(int[] nums, int target) {
@@ -42,4 +42,27 @@ public class Solution35ok {
         }
         return left;
     }
+
+    /**
+     * 此方法不太行，有些实例通不过。
+     * @param nums
+     * @param target
+     * @return
+     */
+    public static int searchInsert1(int[] nums, int target) {
+        int left =0;
+        int right = nums.length;
+        while(left<right){
+            int mid= (right-left)/2 + left;
+            if(nums[mid]==target){
+                return mid;
+            }else if(nums[mid]>target){
+                right = mid-1;
+            }else{
+                left = mid+1;
+            }
+        }
+        return left+1;
+    }
+
 }
